@@ -1,0 +1,10 @@
+<h2>Messages</h2>
+<mat-card class="light-gray-bg">
+  <button mat-flat-button class="left-margin-10" color="primary" (click)="clear()">Clear</button>
+  <button mat-flat-button class="left-margin-10" color="primary" (click)="refresh()">Refresh</button>
+  <div class="message-container">
+  <div *ngFor="let message of messages" class="margin-top-10">
+    <app-message-detail [data]="message"></app-message-detail>
+  </div>
+</div>
+</mat-card>

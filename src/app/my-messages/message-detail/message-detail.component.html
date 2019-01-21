@@ -1,0 +1,7 @@
+<div>
+    <span style="font-weight: bold"><pre [innerHtml]="data.user"></pre>:  </span>
+    <span class="left-padding-5">{{data.message}}</span>
+    <span class="date-style">({{data.created | date: 'dd/MM/yyyy'}})</span>
+    <span (mouseleave)="showPanel(false)" (mouseover)="showPanel(true)">X</span>
+    <app-qrcode-panel *ngIf="isPanelVisible"></app-qrcode-panel>
+</div>
