@@ -1,3 +1,14 @@
 <h3>{{title}}</h3>
-<!-- <app-my-message [messages]="datasource"></app-my-message> -->
-<router-outlet></router-outlet>
+<app-my-message [messages]="datasource"></app-my-message>
+<div class="container">
+  <div class="form">
+      <input class="item" [(ngModel)]="inputUser" placeholder="insert user" />
+      <input class="item item--flex1" [(ngModel)]="inputMessage" placeholder="insert message"/>
+  </div>
+
+  <div class="container container--row">
+      <button class="button button--primary button--flex1" (click)="sendMessage()">SEND</button>
+      <button class="button button--secondary button--flex1" (click)="clearMessages()">CLEAR</button>
+      <button class="button button--secondary button--flex1" (click)="refreshMessages()">REFRESH</button>
+  </div>
+</div>
