@@ -1,1 +1,65 @@
 /* You can add global styles to this file, and also import other style files */
+.container {
+  border: 1px solid black;
+  margin: 0.5rem;
+  border-radius: 3px;
+  background-color: #cccccc;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &--row {
+    flex-direction: row;
+  }
+}
+
+.card {
+  background-color: #aaaaaa;
+  border-radius: 3px;
+  display: flex;
+  margin: 0.5rem;
+  min-height: 3rem;
+
+  &:hover{
+    font-style: italic;
+  }
+}
+
+.card-primaryitem {
+  flex: 1;
+}
+
+.card-item {
+  // max-width: 5rem;
+  font-weight: bolder;
+}
+
+.button {
+   font-size: 2rem;
+
+  &--primary{
+    background-color: greenyellow;
+  }
+
+  &--secondary {
+    background-color: cornflowerblue;
+  }
+
+  &--flex1 {
+    flex: 1;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  margin: 0.5rem 1rem;
+  display: flex;
+  &--flex1 {
+    flex: 1;
+  }
+}
+
