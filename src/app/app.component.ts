@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IMessage } from './core/definition/message';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-chat';
+  public title = 'ChatZZZ';
+  public datasource: IMessage[] = [];
+
+  constructor() {}
 }
