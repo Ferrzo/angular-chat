@@ -27,6 +27,7 @@ export class AppService {
   }
 
   public sendMessage(message: IMessage): void {
+    message = this.validateMessage(message);
     this.appApiService.sendMessage(message)
       .pipe(take(1))
       .subscribe((response: IMessage[]) => {
@@ -34,6 +35,16 @@ export class AppService {
           this.setMessages(response);
         }
       });
+  }
+
+  private validateMessage(message: IMessage): IMessage {
+    if (message.message.length > 100) {
+      message.message = message.message.substr(0, 100);
+    }
+    if (message.user.length > 25) {
+      message.user = message.user.substr(0, 25);
+    }
+    return message;
   }
 
   private getMessagesFromAPI(): void {
