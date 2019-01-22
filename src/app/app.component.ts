@@ -8,7 +8,7 @@ import { AppService } from './services/app.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public title = 'ChatZZZ';
+  public title = 'Some chat';
   public datasource: IMessage[] = [];
   public inputUser = '';
   public inputMessage = '';
@@ -18,7 +18,7 @@ export class AppComponent {
     this.appService.getMessages()
     .subscribe((messages: IMessage[]) => {
       if (messages) {
-        this.datasource = messages;
+        this.datasource = messages.reverse();
       }
     });
   }
