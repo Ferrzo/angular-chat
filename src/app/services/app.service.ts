@@ -21,6 +21,11 @@ export class AppService {
   public setMessages(values: IMessage[]): void {
     this.messages.next(values);
   }
+
+  public getNewMessages(): void {
+    this.getMessagesFromAPI();
+  }
+
   public sendMessage(message: IMessage): void {
     this.appApiService.sendMessage(message)
       .pipe(take(1))

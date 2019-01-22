@@ -14,23 +14,24 @@ export class AppComponent {
   public inputMessage = '';
 
   constructor(private appService: AppService) {
-    this.refreshMessages();
-  }
-
-  public sendMessage(): void {
-    const request: IMessage = {message: this.inputMessage, created: null, user: this.inputUser};
-    this.appService.sendMessage(request);
-    this.inputUser = '';
-    this.inputMessage = '';
-  }
-
-  public refreshMessages(): void {
+    this.appService.getNewMessages();
     this.appService.getMessages()
     .subscribe((messages: IMessage[]) => {
       if (messages) {
         this.datasource = messages;
       }
     });
+  }
+
+  public sendMessage(): void {
+    const request: IMessage = {message: this.inputMessage.trim(), created: null, user: this.inputUser.trim()};
+    this.appService.sendMessage(request);
+    this.inputUser = '';
+    this.inputMessage = '';
+  }
+
+  public refreshMessages(): void {
+    this.appService.getNewMessages();
   }
 
   public clearMessages(): void {
